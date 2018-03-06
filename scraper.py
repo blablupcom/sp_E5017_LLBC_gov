@@ -111,6 +111,8 @@ for link in links:
             if title.startswith('Q'):
                 csvMth = title.split(' -')[0][:3]
                 csvYr = url['href'].split('-')[-2]
+            if 'Q1, 2 and 3 - April to December 2017' in title:
+                continue
             csvMth = convert_mth_strings(csvMth.upper())
             todays_date = str(datetime.now())
             data.append([csvYr, csvMth, url_2])
